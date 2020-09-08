@@ -1653,16 +1653,16 @@ boost_library(
 boost_library(
     name = "spirit",
     deps = [
-        ":variant",
+        ":foreach",
+        ":function",
+        ":iostreams",
         ":optional",
         ":phoenix",
-        ":function",
-        ":foreach",
-        ":iostreams",
         ":range",
         ":ref",
         ":tti",
         ":utility",
+        ":variant",
     ],
 )
 
@@ -2101,8 +2101,8 @@ boost_library(
 boost_library(
     name = "phoenix",
     deps = [
-        ":proto",
         ":bind",
+        ":proto",
     ],
 )
 
@@ -2270,5 +2270,43 @@ boost_library(
         ":type_traits",
         ":typeof",
         ":utility",
+    ],
+)
+
+boost_library(
+    name = "python",
+    srcs = glob([
+        "libs/python/src/converter/*.cpp",
+        "libs/python/src/numpy/*.cpp",
+        "libs/python/src/object/*.cpp",
+    ]),
+    deps = [
+        ":assert",
+        ":bind",
+        ":config",
+        ":conversion",
+        ":cstdint",
+        ":detail",
+        ":function",
+        ":get_pointer",
+        ":graph",
+        ":integer",
+        ":iterator",
+        ":lexical_cast",
+        ":math",
+        ":mpl",
+        ":noncopyable",
+        ":operators",
+        ":preprocessor",
+        ":property_map",
+        ":ref",
+        ":scoped_array",
+        ":shared_ptr",
+        ":smart_ptr",
+        ":static_assert",
+        ":tuple",
+        ":type",
+        ":utility",
+        "@python3//:lib",
     ],
 )

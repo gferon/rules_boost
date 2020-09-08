@@ -161,7 +161,7 @@ def boost_so_library(
         }),
     )
 
-def boost_deps():
+def boost_deps(with_python = False):
     if "bazel_skylib" not in native.existing_rules():
         http_archive(
             name = "bazel_skylib",
